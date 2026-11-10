@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Meru.dev Portfolio</title>
+
+    <style>
+      #head {
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        color: hwb(240 17% 35%);
+      }
+
+      #form {
+        border: 2px solid skyblue;
+        border-radius: 20px;
+        margin: 20px;
+        padding: 10px;
+      }
+
+      #button {
+        margin-bottom: 20px;
+        margin-left: 130px;
+        border-radius: 20px;
+        height: 30px;
+        color: hwb(240 15% 26%);
+        transition: background-color 0.5s;
+      }
+
+      #button:hover {
+        background-color: hwb(272 24% 47%);
+        color: hwb(287 30% 29%);
+      }
+
+      #name,
+      #age {
+        margin-top: 20px;
+        margin-left: 60px;
+        border-radius: 20px;
+        height: 20px;
+      }
+
+      #para {
+        text-align: center;
+        color: hwb(188 15% 26%);
+      }
+
+      /* Skills Grid */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        margin: 30px 20px;
+      }
+
+      .box {
+        border: 2px solid skyblue;
+        border-radius: 15px;
+        padding: 20px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        transition: 0.3s;
+      }
+
+      .box:hover {
+        transform: scale(1.05);
+        background-color: lightblue;
+      }
+
+      /* Projects */
+      #projects {
+        text-align: center;
+        margin: 30px 20px;
+      }
+
+      .project {
+        display: inline-block;
+        margin: 10px;
+        padding: 15px 25px;
+        border: 2px solid skyblue;
+        border-radius: 15px;
+        text-decoration: none;
+        color: hwb(240 15% 26%);
+        transition: 0.3s;
+      }
+
+      .project:hover {
+        background-color: hwb(272 24% 47%);
+        color: white;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <!-- Heading -->
+    <h1 id="head">Meru.dev ☆</h1>
+
+    <!-- Registration Form -->
+    <form id="form">
+
+      <input
+        id="name"
+        type="text"
+        placeholder="Enter ur name"
+      >
+
+      <input
+        id="age"
+        type="number"
+        placeholder="Enter ur age"
+      >
+
+      <br><br>
+
+      <button id="button" type="submit">
+        Submit
+      </button>
+
+    </form>
+
+    <p id="para"></p>
+
+    <!-- Skills -->
+    <h2 id="head">My Skills <br>            
+      (still trying to learn ;)</h2>
+
+    <div class="grid">
+      <div class="box">HTML</div>
+      <div class="box">CSS</div>
+      <div class="box">JavaScript</div>
+      <div class="box">Python</div>
+      <div class="box">Git</div>
+      <div class="box">GitHub</div>
+    </div>
+
+    <!-- Projects -->
+    <div id="projects">
+
+      <h2 id="head">My Projects</h2>
+
+      <a
+        class="project"
+        href="https://frontend-project-1-8alj.vercel.app/"
+        target="_blank"
+      >
+        Project 1
+      </a>
+
+      <a
+        class="project"
+        href="https://frontend-project-2-one.vercel.app/"
+        target="_blank"
+      >
+        Project 2
+      </a>
+
+      <a
+        class="project"
+        href="https://frontend-project-3-e2t3.vercel.app/"
+        target="_blank"
+      >
+        Project 3
+      </a>
+    </div>
+
+    <script>
+
+      let form =
+        document.getElementById("form");
+
+      form.addEventListener(
+        "submit",
+        function(event) {
+
+          event.preventDefault();
+
+          let name =
+            document.getElementById("name").value;
+
+          let age =
+            document.getElementById("age").value;
+
+          if (name === "") {
+
+            document.getElementById("para").textContent =
+              "Please enter your name.";
+
+          }
+
+          else if (age === "") {
+
+            document.getElementById("para").textContent =
+              "Please enter your age.";
+
+          }
+
+          else {
+
+            document.getElementById("para").textContent =
+              "yellooww & welcome " +
+              name +
+              "! You are " +
+              age +
+              " years old.😁";
+
+          }
+        }
+      );
+
+      // Validation means checking whether
+      // the information entered by the user is acceptable.
+
+    </script>
+
+  </body>
+</html>
